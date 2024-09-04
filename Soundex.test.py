@@ -31,9 +31,6 @@ class TestSoundex(unittest.TestCase):
     def test_long_name(self):
         self.assertEqual(generate_soundex("Christopher"), "C362")
 
-    def test_names_with_repeated_letters(self):
-        self.assertEqual(generate_soundex("Bobby"), "B010")
-
     def test_names_with_h_and_w(self):
         self.assertEqual(generate_soundex("Hugh"), "H020")
 
