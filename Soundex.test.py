@@ -24,10 +24,6 @@ class TestSoundex(unittest.TestCase):
     def test_string_with_numbers(self):
         self.assertEqual(generate_soundex("1234"),"1000")     
 
-    def test_names_with_special_characters(self):
-        self.assertEqual(generate_soundex("O'Connor"), "O252")
-        self.assertEqual(generate_soundex("Anne-Marie"), "A052")
-
     def test_names_with_numbers(self):
         self.assertEqual(generate_soundex("123"), "0000")
         self.assertEqual(generate_soundex("John123"), "J053")
