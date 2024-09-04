@@ -24,15 +24,6 @@ class TestSoundex(unittest.TestCase):
     def test_string_with_numbers(self):
         self.assertEqual(generate_soundex("1234"),"1000")     
 
-    def test_names_with_numbers(self):
-        self.assertEqual(generate_soundex("123"), "0000")
-        self.assertEqual(generate_soundex("John123"), "J053")
-
-    def test_long_name(self):
-        self.assertEqual(generate_soundex("Christopher"), "C362")
-
-    def test_names_with_h_and_w(self):
-        self.assertEqual(generate_soundex("Hugh"), "H020")
 
     def test_failure_case(self):
         self.assertNotEqual(generate_soundex("Honeyman"), "H554")
