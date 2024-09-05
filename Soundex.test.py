@@ -39,6 +39,17 @@ class TestSoundex(unittest.TestCase):
     def test_multiple_vowels(self):
         self.assertEqual(generate_soundex("Euler"), "E460")
 
+    def test_only_vowels(self):
+        self.assertEqual(generate_soundex("Aeio"), "A000")
+    
+    def test_non_mapped_characters(self):
+        self.assertEqual(generate_soundex("!@#$"), "0000")
+    
+    def test_name_with_spaces(self):
+        self.assertEqual(generate_soundex("John Doe"), "J530")
+    
+    def test_lowercase_name(self):
+        self.assertEqual(generate_soundex("smith"), "S530")
 
 
 
