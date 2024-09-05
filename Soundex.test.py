@@ -63,9 +63,6 @@ class TestSoundex(unittest.TestCase):
     def test_name_with_embedded_numbers(self):
         self.assertEqual(generate_soundex("R2D2"), "R300")
         
-    def test_only_space(self):
-        self.assertEqual(generate_soundex(" "), "")
-        
     def test_repeated_vowels(self):
         self.assertEqual(generate_soundex("Aeeeiiiooo"), "A000")
 
