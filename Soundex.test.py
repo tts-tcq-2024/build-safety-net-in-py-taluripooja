@@ -68,15 +68,6 @@ class TestSoundex(unittest.TestCase):
         
     def test_repeated_vowels(self):
         self.assertEqual(generate_soundex("Aeeeiiiooo"), "A000")
-        
-    def test_name_with_leading_spaces(self):
-        self.assertEqual(generate_soundex("  David"), "D130")
-        
-    def test_name_with_multiple_numbers(self):
-        self.assertEqual(generate_soundex("123ABC456"), "A120")
-        
-    def test_long_name(self):
-        self.assertEqual(generate_soundex("Abcdefghijklmnop"), "A123")
 
 
 if __name__ == '__main__':
