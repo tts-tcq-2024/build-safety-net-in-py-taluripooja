@@ -73,7 +73,7 @@ class TestSoundex(unittest.TestCase):
         self.assertEqual(generate_soundex("  David"), "D130")
         
     def test_name_with_multiple_numbers(self):
-        self.assertEqual(generate_soundex("123ABC456"), "A120")4
+        self.assertEqual(generate_soundex("123ABC456"), "A120")
         
     def test_long_name(self):
         self.assertEqual(generate_soundex("Abcdefghijklmnop"), "A123")
