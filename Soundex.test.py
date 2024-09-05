@@ -12,9 +12,6 @@ class TestSoundex(unittest.TestCase):
     def test_four_character(self):
         self.assertEqual(generate_soundex("FGTM"), "F235")
         
-    def test_four_character(self):
-        self.assertEqual(generate_soundex("BFPV"), "B000")
-        
     def test_string_with_special_characters(self):
         self.assertEqual(generate_soundex("1@!Abc3"),"1120")
         
