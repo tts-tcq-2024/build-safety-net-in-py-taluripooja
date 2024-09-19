@@ -1,0 +1,135 @@
+**Feature**: Soundex Algorithm for Improved Search Capability
+
+**Background**:  
+Given the need for effective search functionality in applications, the Soundex algorithm encodes words into a letter plus three digits, mapping similarly sounding words to the same encoding. This helps in finding matches even if the user misspells words.
+
+-----------------------------------------------------------------------------------------------------------------
+
+### **Scenario 1: Encoding a word with the Soundex algorithm**
+
+**Given**:  
+• A word to be encoded using the Soundex algorithm.
+
+**When**:  
+• The Soundex algorithm is applied to the word.
+
+**Then**:  
+• The word is encoded into a letter plus three digits according to the Soundex rules.
+
+**Examples**:
+
+| word      | soundex_code |
+|-----------|--------------|
+| Anderson  | A536         |
+| Johnson   | J525         |
+| Fischer   | F260         |
+| Thompson  | T512         |
+
+-----------------------------------------------------------------------------------------------------------------
+
+### **Scenario 2: Dropping occurrences of a, e, i, o, u, y, h, w**
+
+**Given**:  
+• A word "<word>" containing the letters a, e, i, o, u, y, h, w.
+
+**When**:  
+• The Soundex algorithm is applied to the word.
+
+**Then**:  
+• The resulting Soundex code should not contain any occurrences of a, e, i, o, u, y, h, w after the first letter.
+
+**Examples**:
+
+| word      | soundex_code |
+|-----------|--------------|
+| Awheel    | A400         |
+| Hawaii    | H000         |
+| Academy   | A235         |
+| Ownership | O521         |
+
+-----------------------------------------------------------------------------------------------------------------
+
+### **Scenario 3: Replacing consonants with digits after the first letter**
+
+**Given**:  
+• A word "<word>" containing consonants that need to be replaced with digits according to the Soundex rules.
+
+**When**:  
+• The Soundex algorithm is applied to the word.
+
+**Then**:  
+• The resulting Soundex code should replace the consonants with the correct digits after the first letter.
+
+**Examples**:
+
+| word      | soundex_code |
+|-----------|--------------|
+| Pluto     | P430         |
+| Graham    | G650         |
+| Spielberg | S416         |
+| Castillo  | C234         |
+
+-----------------------------------------------------------------------------------------------------------------
+
+### **Scenario 4: Similar sounding words should have the same Soundex output**
+
+**Given**:  
+• A pair of similar sounding words "<word1>" and "<word2>".
+
+**When**:  
+• The Soundex algorithm is applied to both words.
+
+**Then**:  
+• Both words should have the same Soundex output "<soundex_code>".
+
+**Examples**:
+
+| word1     | word2     | soundex_code |
+|-----------|-----------|--------------|
+| Sara      | Sarah     | S600         |
+| Philip    | Phillip   | P410         |
+| Carl      | Karl      | C640         |
+| Rodgers   | Rogers    | R326         |
+
+-----------------------------------------------------------------------------------------------------------------
+
+### **Scenario 5: Empty input should return empty output**
+
+**Given**:  
+• An empty string as input.
+
+**When**:  
+• The Soundex algorithm is applied to the empty string.
+
+**Then**:  
+• The result is an empty string.
+
+**Examples**:
+
+| input | soundex_code |
+|-------|--------------|
+| ""    | ""           |
+
+-----------------------------------------------------------------------------------------------------------------
+
+### **Scenario 6: Padding with zeros if input is less than four characters**
+
+**Given**:  
+• A word "<short_word>" with less than four characters.
+
+**When**:  
+• The Soundex algorithm is applied to the word.
+
+**Then**:  
+• The result is "<padded_soundex_code>".
+
+**Examples**:
+
+| short_word | padded_soundex_code |
+|------------|---------------------|
+| X          | X000                |
+| Hi         | H000                |
+| Sky        | S200                |
+| Ox         | O200                |
+
+-----------------------------------------------------------------------------------------------------------------
